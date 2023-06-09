@@ -1,0 +1,20 @@
+  <!-- item 1 -->
+
+    <div class="card">
+      <img [ngStyle] ="{'height': '260px'}" [src]="card.thumbnail" class="card-img-top" [alt]="card.subtitle">
+      <div class="card-body">
+        <h5 class="card-title"> {{ card.title }}</h5>
+        <p class="card-text"> {{ card.company}}
+        </p>
+
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Salary: {{ card.salary | currency:'CAD'}}</li>
+        <li class="list-group-item">Location: {{ card.location }}</li>
+      </ul>
+      <div class="card-body">
+        <button [routerLink]="['/jobs', card.id]" [ngClass]="{'btn-primary': !isDisabled,'btn-danger':isDisabled}"[disabled]="isDisabled" (click) ="handleClick()"class="ms-3 btn">{{ isDisabled ? 'Expired' : 'Quick Apply' }}</button>
+      </div>
+    </div>
+
+  <!-- item 1 ends-->
