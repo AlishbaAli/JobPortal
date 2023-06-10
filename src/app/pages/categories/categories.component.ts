@@ -16,13 +16,20 @@ export class CategoriesComponent {
   fstack = Category.FULL_STACK;
   back = Category.BACK_END;
   front = Category.FRONT_END;
-  cards$!:  Observable<Card[]>;
+  //cards$!:  Observable<Card[]>;
   constructor(private jobsService: JobsService , private SharedService: SharedService){
 
   }
 
   getJobsByCategory() {
-    this.cards$ =this.jobsService.getAllJobsByCategory(this.fstack);
+
+
+    this.jobsService.getAllJobsByCategory(this.front).subscribe(
+      (data) => {
+        console.log(data); // Log the retrieved data
+      }
+    );
+    //this.cards$ =this.jobsService.getAllJobsByCategory(this.fstack);
   }
 
 }

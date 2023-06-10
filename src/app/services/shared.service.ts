@@ -8,8 +8,16 @@ import { Observable } from 'rxjs/internal/Observable';
 export class SharedService {
 
   constructor() { }
-  cards$!:  Observable<Card[]>;
 
 
+  private jobs!: any[];
+
+  setJobs(jobs: any[]) {
+    this.jobs = jobs;
+  }
+
+  getJobs() {
+    return this.jobs;
+  }
 
 }

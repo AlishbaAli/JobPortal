@@ -18,8 +18,8 @@ export interface Card {
 // }
 
 export enum Category {
-  FRONT_END = 'Front End',
-  BACK_END = 'Back End',
-  FULL_STACK = 'Full Stack',
+  FRONT_END = 'front end',
+  BACK_END = 'back end',
+  FULL_STACK = 'full stack end',
   ALL='All'
 }
